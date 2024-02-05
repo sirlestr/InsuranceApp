@@ -4,13 +4,8 @@ namespace SpravaPojistenych
 {
     internal class ZpracovaniVstupu
     {
-
-
         //prazdny konstruktor.
         public ZpracovaniVstupu() { }
-
-
-
 
         /// <summary>
         /// upravi vstupní retezec na retezec zacinající velkým písmenem
@@ -20,7 +15,6 @@ namespace SpravaPojistenych
         public  string PrvniVelke(string coUpravit)
         {
             return String.Format(char.ToUpper(coUpravit[0]) + coUpravit.Substring(1));
-
         }
 
         /// <summary>
@@ -30,7 +24,6 @@ namespace SpravaPojistenych
         /// <returns>upravený řetězec bez znaků typu #&@{} atd..</returns>
         public  string OdstranSpecialniZnaky(string coUpravit)
         {
-
             return Regex.Replace(coUpravit, "[^a-zA-Z0-9_.ěščřžýáíéĚŠČŘŽÝÁÍÉ]+", "", RegexOptions.Compiled);
         }
 
@@ -45,14 +38,7 @@ namespace SpravaPojistenych
             upravenyText = PrvniVelke(upravenyText);
             
             return upravenyText;
-            
-
-
         }
-
-
-
-
         /// <summary>
         /// Zpracování věku na základě data narození
         /// </summary>
@@ -69,8 +55,6 @@ namespace SpravaPojistenych
 
             //počet dní do dalších narozenin
             int doNarozenin = datumNarozeni.DayOfYear - dnesniDatum.DayOfYear;
-
-
             //řešení narozenin v současném roce a ošetření přestupného roku
             if (doNarozenin >= 0)
                 vek -= 1;
@@ -80,8 +64,6 @@ namespace SpravaPojistenych
                 if (((DateTime.IsLeapYear(dnesniDatum.Year) && (dnesniDatum.DayOfYear < 60)) ||
                       DateTime.IsLeapYear(dnesniDatum.AddYears(1).Year) && (datumNarozeni.DayOfYear > 59))) { doNarozenin += 1; }
             }
-
-
             //podmínka na ověření limitu věku
             if (vek > limitVeku)
             {
@@ -91,9 +73,6 @@ namespace SpravaPojistenych
             return vek;
 
         }
-
-
-
         /// <summary>
         /// Vraci telefoní číslo pokud ma spravný počet znaků (9) bez předvolby a (13) s předvolbou
         /// </summary>
@@ -102,7 +81,6 @@ namespace SpravaPojistenych
         /// <exception cref="FormatException">zadaný string neodpovídá formátu čísla</exception>
         public  string ZpracujTelefoniCislo(string coUpravit)
         {
-
             if ((coUpravit.Length == 9 || coUpravit.Length == 13))
             {
                 return coUpravit;
@@ -111,11 +89,6 @@ namespace SpravaPojistenych
             {
                 throw new FormatException("Neplatný formát");
             }
-
         }
-
-
-
     }
-
 }
