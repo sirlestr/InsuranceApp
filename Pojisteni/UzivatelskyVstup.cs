@@ -6,8 +6,6 @@ namespace SpravaPojistenych
     {
 
         public UzivatelskyVstup() { }
-
-
         /// <summary>
         /// Vyzadani vstupu uzivatele s minimální délkou nastavitelnbou v parametru
         /// </summary>
@@ -33,11 +31,7 @@ namespace SpravaPojistenych
             }
             //vrací vstup jako text bez mezer na zčátku a konci s minimální délkou nastavenou v parametru
             return vystup;
-
         }
-
-
-
         /// <summary>
         /// Vyžádá si od uživatele datum narození ve formátu d.M.yyyy
         /// </summary>
@@ -51,13 +45,11 @@ namespace SpravaPojistenych
             string datumZKonzole = Console.ReadLine().Trim();
             DateTime datumNarozeni;
 
-
             //vyjímka na prázdnou proměnou
             if (String.IsNullOrEmpty(datumZKonzole))
             {
                 throw new ArgumentNullException("Zadané datum je prázdné");
             }
-
             //parsování data z konzole
             bool normalniDAtum = DateTime.TryParseExact(datumZKonzole, "d.M.yyyy", null, DateTimeStyles.None, out datumNarozeni);
 
@@ -66,16 +58,7 @@ namespace SpravaPojistenych
             {
                 throw new ArgumentException("Zadaný špatný formát, formát data je: \"1.1.1991(d.M.yyyy)\"");
             }
-
             return datumNarozeni;
         }
-
-
-
-
-
-
-
-
     }
 }
