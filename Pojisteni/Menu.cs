@@ -2,14 +2,9 @@
 {
     class Menu
     {
-
-
         //  konstruktor pro spuštění v Main
-        public Menu()
-        {
-
-        }
-
+        public Menu(){ }
+        
         string volba = "";
         //oddělovač textu, je dlouhý a znepřehlednuje kod
         string oddelovac = "-------------------------------------";
@@ -21,14 +16,12 @@
         protected UzivatelskyVstup vstup = new UzivatelskyVstup();
         //zpracovani vstupu
         protected ZpracovaniVstupu zpracovaniVstupu = new ZpracovaniVstupu();
-
-
+        
         /// <summary>
         /// Uvodní obrazovka a menu aplikace
         /// </summary>
         public void VypisUvodniObrazovku()
         {
-
             //cyklus menu
             while (volba != "5")
             {
@@ -73,15 +66,11 @@
                 }
             }
         }
-
-
-
         /// <summary>
         /// Přidej pojisštěnce do Databaze
         /// </summary>
         private void PridejPojistence()
         {
-
             try
             {
                 Console.Clear();
@@ -113,9 +102,7 @@
                 Console.ReadKey();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message.ToString()); }
-
         }
-
         /// <summary>
         /// Odeber pojištěnce z Databaze
         /// </summary>
@@ -123,7 +110,6 @@
         {
             try
             {
-
                 Console.Clear();
                 Console.WriteLine("Vybrali jste volbu Odeber pojištěnce");
                 //načtení jména
@@ -141,12 +127,9 @@
 
             }
             catch (Exception ex) { Console.WriteLine(ex.Message.ToString()); }
-
-
             Console.WriteLine(navratDoMenu);
             Console.ReadLine();
         }
-
         /// <summary>
         /// Zobrazenní všech záznamů
         /// </summary>
@@ -169,7 +152,6 @@
 
             Console.ReadLine();
         }
-
         /// <summary>
         /// Vyhledej pojištěnce podle Jména nebo Příjmení
         /// Ovládací menu vyhledávání
@@ -177,7 +159,6 @@
         //možné vylepšení ... 
         private void VyhledejPojistence()
         {
-
             string volba = "";
             while (volba != "4")
             {
@@ -193,8 +174,6 @@
                 volba = Console.ReadLine().Trim().ToLower();
                 //list pro uloženní a zobrazení výsledků hledání
                 List<Pojistenec> vysledekHledani = new List<Pojistenec>();
-
-
 
                 switch (volba)
                 {
@@ -219,10 +198,6 @@
                 Console.ReadKey();
             }
         }
-
-
-
-
     }
 }
 
