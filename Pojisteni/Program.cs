@@ -8,9 +8,6 @@
             Menu menu = new Menu();
             //Spuštění menu
             menu.VypisUvodniObrazovku();
-
-
-
         }
     }
 }
