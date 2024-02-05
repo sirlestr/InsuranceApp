@@ -4,11 +4,9 @@
     {
         //deklarace listu pojistencu
         private List<Pojistenec> databaze;
-
         //konstruktor4      
         public Databaze()
         {
-
             //inicialikzace listu se záznamy pojistenych, abych to nemusel furt psát znovu
             databaze = new List<Pojistenec>
             {
@@ -19,7 +17,6 @@
                 new Pojistenec("Franta", "Novotný", 34, "73995487"),
             };
         }
-
         //Prida zaznam do seznamu
         // oveření jestli byl záznam přidán
         public bool PridejZaznam(string jmeno, string prijmeni, int vek, string telefon)
@@ -32,10 +29,7 @@
                 //Console.WriteLine("Záznam  byl přidán");
             }
             return false;
-
         }
-
-
         /// <summary>
         /// Vyhledej Záznamy v databázi pojištěnců
         /// </summary>
@@ -53,13 +47,10 @@
                     vysledek.Add(p);
                 }
             }
-
             //vypsání nalezených záznamů do konzole
             //vysledek.ForEach(p => { Console.WriteLine(p); });
             return vysledek;
         }
-
-
         /// <summary>
         /// předá aktuální instanci databáze záznamu pro vypsání v menu
         /// </summary>
@@ -67,9 +58,6 @@
         {
           return databaze;            
         }
-
-
-
         /// <summary>
         /// Odebere záznam z databáze na základě vyhledání Jména a Příjmení
         /// </summary>
