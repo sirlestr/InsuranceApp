@@ -1,4 +1,4 @@
-# AplikacePojisteni
+# InsuranceApp
 
 Console version of the insurance program for the final exam of the ItNetwork.cz retraining course.
 
